@@ -1,7 +1,7 @@
 import { Route, Routes, Navigate } from "react-router-dom";
 import Planets from "./Planets";
 import Navbar from "./components/Navbar";
-import data from '../data.json'
+import data from './data.json'
 
 
 function App() {
