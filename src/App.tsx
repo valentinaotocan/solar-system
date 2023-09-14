@@ -1,13 +1,13 @@
 import { Route, Routes, Navigate } from "react-router-dom";
 import Planets from "./Planets";
-import Navbar from "./components/Navbar";
-import data from './data.json'
+import Header from "./components/Header";
+import data from './data.json';
 
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <Header />
       <Routes>
         <Route path="/" element={<Navigate to="/mercury" />} />
         {data.map((planet) => (

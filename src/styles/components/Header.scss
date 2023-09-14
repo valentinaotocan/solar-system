@@ -1,0 +1,17 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5.31rem;
+  padding-left: 2rem;
+  padding-right: 2.56rem;
+
+  nav {
+    .link {
+      padding-right: 2.06rem;
+    }
+    .link:last-child {
+      padding-right: 0;
+    }
+  }
+}
