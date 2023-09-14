@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import data from "../../data.json";
+import data from '../data.json';
 
 function Navbar() {
   return (
