@@ -1,5 +1,5 @@
 @import "reset";
-@import 'colors.scss';
+@import "colors.scss";
 
 @import "components/Header.scss";
 
@@ -10,8 +10,8 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: 1.79;
-  background-image: url('../assets/background-stars.svg');
-  background-size: cover;
+  background-image: url("../assets/background-stars.svg");
+  background-position: 47% 50%;
   background-color: $navy;
 }
 
@@ -44,4 +44,8 @@ h4 {
   line-height: 2.27;
   letter-spacing: 0.06rem;
   text-transform: uppercase;
+}
+
+a {
+  color: inherit;
 }
