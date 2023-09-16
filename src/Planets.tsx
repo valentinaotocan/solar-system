@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import OverviewText from "./components/OverviewText";
 import data from "./data.json";
+import OverviewImage from "./components/OverviewImage";
 
 function Planets() {
   const { planetId } = useParams();
@@ -11,9 +12,9 @@ function Planets() {
     return <div>Planet not found</div>;
   }
 
-
   return (
     <section>
+      <OverviewImage />
       <div>
         <h1>{planet.name}</h1>
         <OverviewText planet={planet} />
