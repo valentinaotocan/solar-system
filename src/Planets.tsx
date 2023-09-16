@@ -9,7 +9,7 @@ function Planets() {
   const planet = data.find((planet) => planet.name === planetId);
 
   if (!planet) {
-    return <div>Planet not found</div>;
+    return <div>Planet doesn't exist</div>;
   }
 
   return (
