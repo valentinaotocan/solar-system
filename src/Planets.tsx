@@ -9,7 +9,7 @@ function Planets() {
   const planet = data.find((planet) => planet.name === planetId);
 
   if (!planet) {
-    return <div>Planet doesn't exist</div>;
+    return <div>Planet doesn't exist!</div>;
   }
 
   return (
@@ -27,6 +27,9 @@ function Planets() {
             Source : Wikipedia
           </a>
         </p>
+        <button>Overview</button>
+        <button>Internal structure</button>
+        <button>Surface geology</button>
       </div>
       <div className="planet__information">
         <div>
