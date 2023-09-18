@@ -32,7 +32,7 @@ h2 {
   text-transform: uppercase;
 }
 
-h3 {
+h3, button {
   font-size: 0.75rem;
   font-weight: 700;
   line-height: 2.08;
@@ -48,6 +48,7 @@ h4 {
   text-transform: uppercase;
 }
 
-a {
+a, button {
   color: inherit;
+  display: inline-block;
 }

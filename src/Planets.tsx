@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { ReactComponent as IconSource } from "./assets/icon-source.svg";
 import OverviewText from "./components/OverviewText";
 import data from "./data.json";
 import OverviewImage from "./components/OverviewImage";
@@ -19,20 +20,29 @@ function Planets() {
           <OverviewImage />
         </div>
         <div className="planet__main__text">
-          <h1>{planet.name}</h1>
+          <h1 className="planet__main__text__heading">{planet.name}</h1>
           <OverviewText planet={planet} />
-          <p>
+          <div className="planet__main__text__source">
+            <span>Source : </span>
             <a
               href={planet.overview.source}
               target="_blank"
               rel="noopener noreferrer"
             >
-              Source : Wikipedia
+              Wikipedia <IconSource className="icon-source"/>
             </a>
-          </p>
-          <button>Overview</button>
-          <button>Internal structure</button>
-          <button>Surface geology</button>
+          </div>
+          <div className="planet__main__text__buttons">
+            <button>
+              <span>01</span>Overview
+            </button>
+            <button>
+              <span>02</span>Internal structure
+            </button>
+            <button>
+              <span>03</span>Surface geology
+            </button>
+          </div>
         </div>
       </div>
       <div className="planet__information">
