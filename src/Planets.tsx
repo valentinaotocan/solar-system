@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { ReactComponent as IconSource } from "./assets/icon-source.svg";
 import OverviewText from "./components/OverviewText";
@@ -5,6 +6,7 @@ import data from "./data.json";
 import OverviewImage from "./components/OverviewImage";
 
 function Planets() {
+  const [index, setIndex] = useState(1);
   const { planetId } = useParams();
 
   const planet = data.find((planet) => planet.name === planetId);
@@ -13,11 +15,14 @@ function Planets() {
     return <div>Planet doesn't exist!</div>;
   }
 
+  // Access the button background color for the current planet
+  const buttonBackgroundColor = planet["btn-background"];
+
   return (
     <section className="planet">
       <div className="planet__main">
         <div className="planet__main__image">
-          <OverviewImage />
+          {index === 1 && <OverviewImage />}
         </div>
         <div className="planet__main__text">
           <h1 className="planet__main__text__heading">{planet.name}</h1>
@@ -29,17 +34,35 @@ function Planets() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Wikipedia <IconSource className="icon-source"/>
+              Wikipedia <IconSource className="icon-source" />
             </a>
           </div>
           <div className="planet__main__text__buttons">
-            <button>
+            <button
+              onClick={() => setIndex(1)}
+              style={{
+                backgroundColor:
+                  index === 1 ? buttonBackgroundColor : "transparent",
+              }}
+            >
               <span>01</span>Overview
             </button>
-            <button>
+            <button
+              onClick={() => setIndex(2)}
+              style={{
+                backgroundColor:
+                  index === 2 ? buttonBackgroundColor : "transparent",
+              }}
+            >
               <span>02</span>Internal structure
             </button>
-            <button>
+            <button
+              onClick={() => setIndex(3)}
+              style={{
+                backgroundColor:
+                  index === 3 ? buttonBackgroundColor : "transparent",
+              }}
+            >
               <span>03</span>Surface geology
             </button>
           </div>
