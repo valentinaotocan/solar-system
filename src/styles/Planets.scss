@@ -1,14 +1,16 @@
 .planet {
-  padding: 7.88rem 10.31rem 3.5rem 10.31rem;
+  margin: 0 auto;
+  max-width: 1109px;
+  padding-top: 7.88rem;
+  padding-bottom: 3.5rem;
   &__main {
     display: flex;
     padding-bottom: 5.44rem;
-
     &__image {
       display: flex;
       justify-content: center;
       align-items: center;
-      flex: 2;
+      width: 60%
     }
     &__text {
       width: 21.875rem;
@@ -54,7 +56,7 @@
   }
   &__information {
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     gap: 1.88rem;
     &__div {
       border: 1px solid rgb(255, 255, 255, 0.2);
