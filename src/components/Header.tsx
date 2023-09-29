@@ -7,7 +7,12 @@ function Header() {
       <div className="logo">The planets</div>
       <nav>
         {data.map((planet) => (
-          <NavLink key={planet.name} to={planet.name} className='link'>
+          <NavLink
+            key={planet.name}
+            to={planet.name}
+            className="link"
+            data-planet={planet.name}
+          >
             {planet.name.toUpperCase()}
           </NavLink>
         ))}
