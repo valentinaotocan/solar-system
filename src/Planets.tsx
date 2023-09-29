@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { ReactComponent as IconSource } from "./assets/icon-source.svg";
 import OverviewText from "./components/OverviewText";
+import InternalStructureImage from './components/InternalStructureImage';
 import data from "./data.json";
 import OverviewImage from "./components/OverviewImage";
 
@@ -23,6 +24,7 @@ function Planets() {
       <div className="planet__main">
         <div className="planet__main__image">
           {index === 1 && <OverviewImage />}
+          {index === 2 && <InternalStructureImage />}
         </div>
         <div className="planet__main__text">
           <h1 className="planet__main__text__heading">{planet.name}</h1>
