@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { ReactComponent as IconSource } from "./assets/icon-source.svg";
+import OverviewImage from "./components/OverviewImage";
 import OverviewText from "./components/OverviewText";
 import InternalStructureImage from './components/InternalStructureImage';
-import OverviewImage from "./components/OverviewImage";
+import InternalStructureText from "./components/InternalStructureText";
 import SurfaceGeologyImage from './components/SurfaceGeologyImage';
 import data from "./data.json";
 
@@ -17,8 +18,18 @@ function Planets() {
     return <div>Planet doesn't exist!</div>;
   }
 
+  const sourceMapping: {
+    [key: number]: string;
+  } = {
+    1: planet.overview.source,
+    2: planet.structure.source,
+    3: planet.geology.source,
+  };
+
   // Access the button background color for the current planet
   const buttonBackgroundColor = planet["btn-background"];
+  // Access the source URL based on the index
+  const sourceUrl = sourceMapping[index];
 
   return (
     <section className="planet">
@@ -37,11 +48,13 @@ function Planets() {
         </div>
         <div className="planet__main__text">
           <h1 className="planet__main__text__heading">{planet.name}</h1>
-          <OverviewText planet={planet} />
+          {index === 1 && <OverviewText planet={planet} />}
+          {index === 2 && <InternalStructureText planet={planet} />}
+
           <div className="planet__main__text__source">
             <span>Source : </span>
             <a
-              href={planet.overview.source}
+              href={sourceUrl}
               target="_blank"
               rel="noopener noreferrer"
             >

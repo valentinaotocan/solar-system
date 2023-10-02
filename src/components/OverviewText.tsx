@@ -1,11 +1,11 @@
 interface OverviewContent {
   planet: {
-    overview: {
+    structure: {
       content: string;
     };
   };
 }
 function OverviewText({ planet }: OverviewContent) {
-  return <p>{planet.overview.content}</p>;
+  return <p>{planet.structure.content}</p>;
 }
 export default OverviewText;
