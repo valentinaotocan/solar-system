@@ -2,10 +2,9 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { ReactComponent as IconSource } from "./assets/icon-source.svg";
 import OverviewImage from "./components/OverviewImage";
-import OverviewText from "./components/OverviewText";
 import InternalStructureImage from './components/InternalStructureImage';
-import InternalStructureText from "./components/InternalStructureText";
 import SurfaceGeologyImage from './components/SurfaceGeologyImage';
+import PlanetText from "./components/PlanetText";
 import data from "./data.json";
 
 function Planets() {
@@ -48,16 +47,12 @@ function Planets() {
         </div>
         <div className="planet__main__text">
           <h1 className="planet__main__text__heading">{planet.name}</h1>
-          {index === 1 && <OverviewText planet={planet} />}
-          {index === 2 && <InternalStructureText planet={planet} />}
-
+          {index === 1 && <PlanetText content={planet.overview.content} />}
+          {index === 2 && <PlanetText content={planet.structure.content} />}
+          {index === 3 && <PlanetText content={planet.geology.content} />}
           <div className="planet__main__text__source">
             <span>Source : </span>
-            <a
-              href={sourceUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href={sourceUrl} target="_blank" rel="noopener noreferrer">
               Wikipedia <IconSource className="icon-source" />
             </a>
           </div>
