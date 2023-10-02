@@ -7,11 +7,23 @@
     display: flex;
     justify-content: space-between;
     padding-bottom: 5.44rem;
+    height: 39.188rem;
+    position: relative;
     &__image {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 60%
+      width: 60%;
+      position: relative;
+      &__geology {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__arrow {
+          position: absolute;
+          bottom: 0px;
+        }
+      }
     }
     &__text {
       width: 21.875rem;
