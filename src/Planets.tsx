@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { ReactComponent as IconSource } from "./assets/icon-source.svg";
 import OverviewImage from "./components/OverviewImage";
-import InternalStructureImage from './components/InternalStructureImage';
-import SurfaceGeologyImage from './components/SurfaceGeologyImage';
+import StructureImage from './components/StructureImage';
+import GeologyImage from './components/GeologyImage';
 import PlanetText from "./components/PlanetText";
 import data from "./data.json";
 
@@ -35,12 +35,12 @@ function Planets() {
       <div className="planet__main">
         <div className="planet__main__image">
           {index === 1 && <OverviewImage />}
-          {index === 2 && <InternalStructureImage />}
+          {index === 2 && <StructureImage />}
           {index === 3 && (
             <div className="planet__main__image__geology">
               <OverviewImage />
               <div className="planet__main__image__geology__arrow">
-                <SurfaceGeologyImage />
+                <GeologyImage />
               </div>
             </div>
           )}

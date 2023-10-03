@@ -8,12 +8,12 @@ import saturn from "../assets/geology-saturn.png";
 import uranus from "../assets/geology-uranus.png";
 import neptune from "../assets/geology-neptune.png";
 
-interface PlanetImageData {
+interface GeologyImageData {
   image: string;
   alt: string;
 };
 
-const planetImages: Record<string, PlanetImageData> = {
+const planetImages: Record<string, GeologyImageData> = {
   "/mercury": { image: mercury, alt: "Geology Mercury" },
   "/venus": { image: venus, alt: "Geology Venus" },
   "/earth": { image: earth, alt: "Geology Earth" },
@@ -24,7 +24,7 @@ const planetImages: Record<string, PlanetImageData> = {
   "/neptune": { image: neptune, alt: "Geology Neptune" },
 };
 
-function InternalStructureImage() {
+function GeologyImage() {
   const location = useLocation();
   const planetData = planetImages[location.pathname];
 
@@ -40,4 +40,4 @@ function InternalStructureImage() {
   return null;
 }
 
-export default InternalStructureImage;
+export default GeologyImage;

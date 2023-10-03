@@ -8,33 +8,20 @@ import { ReactComponent as Saturn } from "../assets/planet-saturn-internal.svg";
 import { ReactComponent as Uranus } from "../assets/planet-uranus-internal.svg";
 import { ReactComponent as Neptune } from "../assets/planet-neptune-internal.svg";
 
-function InternalStructureImage() {
+function StructureImage() {
   const location = useLocation();
 
-  if (location.pathname === "/mercury") {
-    return <Mercury />;
-  }
-  if (location.pathname === "/venus") {
-    return <Venus />;
-  }
-  if (location.pathname === "/earth") {
-    return <Earth />;
-  }
-  if (location.pathname === "/mars") {
-    return <Mars />;
-  }
-  if (location.pathname === "/jupiter") {
-    return <Jupiter />;
-  }
-  if (location.pathname === "/saturn") {
-    return <Saturn />;
-  }
-  if (location.pathname === "/uranus") {
-    return <Uranus />;
-  }
-  if (location.pathname === "/neptune") {
-    return <Neptune />;
-  }
-  return null;
+ const planetComponents: Record<string, JSX.Element> = {
+   "/mercury": <Mercury />,
+   "/venus": <Venus />,
+   "/earth": <Earth />,
+   "/mars": <Mars />,
+   "/jupiter": <Jupiter />,
+   "/saturn": <Saturn />,
+   "/uranus": <Uranus />,
+   "/neptune": <Neptune />,
+ };
+
+ return planetComponents[location.pathname] || null;
 }
-export default InternalStructureImage;
+export default StructureImage;
