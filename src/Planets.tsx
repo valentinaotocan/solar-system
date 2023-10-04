@@ -63,11 +63,13 @@ function Planets() {
                 backgroundColor:
                   index === 1 ? buttonBackgroundColor : "transparent",
               }}
+              className={index === 1 ? "active" : ""}
             >
               <span>01</span>Overview
             </button>
             <button
               onClick={() => setIndex(2)}
+              className={index === 2 ? "active" : ""}
               style={{
                 backgroundColor:
                   index === 2 ? buttonBackgroundColor : "transparent",
@@ -77,6 +79,7 @@ function Planets() {
             </button>
             <button
               onClick={() => setIndex(3)}
+              className={index === 3 ? "active" : ""}
               style={{
                 backgroundColor:
                   index === 3 ? buttonBackgroundColor : "transparent",
