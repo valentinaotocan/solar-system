@@ -6,7 +6,6 @@ header {
   padding-left: 2rem;
   padding-right: 2.56rem;
   position: relative;
-
   &::after {
     content: "";
     position: absolute;
@@ -14,9 +13,8 @@ header {
     left: 0;
     width: 100%;
     height: 1px;
-    background: rgba(255, 255, 255, 0.2);
+    background: $grey;
   }
-
   .logo {
     font-family: "Antonio", sans-serif;
     font-size: 1.75rem;
@@ -37,7 +35,9 @@ header {
           margin-right: 0;
         }
       }
+      &:hover,
       &.active {
+        // Hover and active link styles
         position: relative;
         display: inline-block;
         width: auto;
@@ -52,13 +52,13 @@ header {
           background-color: transparent;
         }
       }
-    }
-  }
-
-  // Dynamically set background-color based on the active planet
-  @each $name, $color in $planet-colors {
-    nav a.active[data-planet="#{$name}"]::before {
-      background-color: $color;
+      // Dynamically set background-color based on the active planet and hover
+      @each $name, $color in $planet-colors {
+        &.active[data-planet="#{$name}"]::before,
+        &:hover[data-planet="#{$name}"]::before {
+          background-color: $color;
+        }
+      }
     }
   }
 }
