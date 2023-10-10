@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { ReactComponent as IconSource } from "./assets/icon-source.svg";
 import OverviewImage from "./components/OverviewImage";
-import StructureImage from './components/StructureImage';
-import GeologyImage from './components/GeologyImage';
+import StructureImage from "./components/StructureImage";
+import GeologyImage from "./components/GeologyImage";
 import PlanetText from "./components/PlanetText";
 import data from "./data.json";
 
@@ -35,7 +35,12 @@ function Planets() {
       <div className="planet__main">
         <div className="planet__main__image">
           {index === 1 && <OverviewImage />}
-          {index === 2 && <StructureImage />}
+          {index === 2 && (
+            <div className="planet__main__image__internal">
+              <OverviewImage />
+              <StructureImage />
+            </div>
+          )}
           {index === 3 && (
             <div className="planet__main__image__geology">
               <OverviewImage />
@@ -46,15 +51,19 @@ function Planets() {
           )}
         </div>
         <div className="planet__main__text">
-          <h1 className="planet__main__text__heading">{planet.name}</h1>
-          {index === 1 && <PlanetText content={planet.overview.content} />}
-          {index === 2 && <PlanetText content={planet.structure.content} />}
-          {index === 3 && <PlanetText content={planet.geology.content} />}
-          <div className="planet__main__text__source">
-            <span>Source : </span>
-            <a href={sourceUrl} target="_blank" rel="noopener noreferrer">
-              Wikipedia <IconSource className="icon-source" />
-            </a>
+          <div className="planet__main__text__facts">
+            <h1 className="planet__main__text__facts__heading">
+              {planet.name}
+            </h1>
+            {index === 1 && <PlanetText content={planet.overview.content} />}
+            {index === 2 && <PlanetText content={planet.structure.content} />}
+            {index === 3 && <PlanetText content={planet.geology.content} />}
+            <div className="planet__main__text__facts__source">
+              <span>Source : </span>
+              <a href={sourceUrl} target="_blank" rel="noopener noreferrer">
+                Wikipedia <IconSource className="icon-source" />
+              </a>
+            </div>
           </div>
           <div className="planet__main__text__buttons">
             <button

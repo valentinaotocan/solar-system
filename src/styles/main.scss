@@ -52,3 +52,15 @@ a, button {
   color: inherit;
   display: inline-block;
 }
+
+// responsive - 768px;
+@media(max-width: 48rem) {
+  body {
+    font-size: 0.6875rem;
+    line-height: 2;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+}

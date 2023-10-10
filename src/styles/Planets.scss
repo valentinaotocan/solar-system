@@ -15,6 +15,9 @@
       align-items: center;
       width: 60%;
       position: relative;
+      &__internal {
+        position: relative;
+      }
       &__geology {
         display: flex;
         flex-direction: column;
@@ -27,18 +30,20 @@
     }
     &__text {
       width: 21.875rem;
-      &__heading {
-        padding-bottom: 1.44rem;
-      }
-      &__source {
-        padding-top: 1.5rem;
-        padding-bottom: 2.44rem;
-        opacity: 0.5;
-        a {
-          font-weight: 700;
-          .icon-source {
-            margin-left: 0.5rem;
-            margin-bottom: -0.188rem;
+      &__facts {
+        &__heading {
+          padding-bottom: 1.44rem;
+        }
+        &__source {
+          padding-top: 1.5rem;
+          padding-bottom: 2.44rem;
+          opacity: 0.5;
+          a {
+            font-weight: 700;
+            .icon-source {
+              margin-left: 0.5rem;
+              margin-bottom: -0.188rem;
+            }
           }
         }
       }
@@ -69,13 +74,41 @@
   }
   &__information {
     display: flex;
-    // justify-content: center;
     gap: 1.88rem;
     &__div {
       border: 1px solid $grey;
       width: 15.9375rem;
       height: 8rem;
       padding: 1.25rem 0 1.69rem 1.44rem;
+    }
+  }
+  // responsive - 1200px
+  @media (max-width: 75rem) {
+    padding-left: 2.44rem;
+    padding-right: 2.5rem;
+    &__main {
+      flex-direction: column;
+      height: unset;
+      &__image {
+        width: 100%;
+      }
+      &__text {
+        display: flex;
+        width: 100%;
+        &__facts {
+          width: 60%;
+          padding-right: 9%;
+        }
+        &__buttons {
+          width: 40%;
+          display: flex;
+          justify-content: center;
+          margin-left: 3%;
+          button {
+            width: 100%;
+          }
+        }
+      }
     }
   }
 }

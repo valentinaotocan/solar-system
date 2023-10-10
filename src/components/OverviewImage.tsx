@@ -1,40 +1,30 @@
 import { useLocation } from 'react-router-dom';
-import { ReactComponent as Mercury } from "../assets/planet-mercury.svg";
-import { ReactComponent as Venus } from "../assets/planet-venus.svg";
-import { ReactComponent as Earth } from "../assets/planet-earth.svg";
-import { ReactComponent as Mars} from "../assets/planet-mars.svg";
-import { ReactComponent as Jupiter } from "../assets/planet-jupiter.svg";
-import { ReactComponent as Saturn } from "../assets/planet-saturn.svg";
-import { ReactComponent as Uranus } from "../assets/planet-uranus.svg";
-import { ReactComponent as Neptune } from "../assets/planet-neptune.svg";
+import mercury from "../assets/planet-mercury.png";
+import venus from "../assets/planet-venus.png";
+import earth from "../assets/planet-earth.png";
+import mars from "../assets/planet-mars.png";
+import jupiter from "../assets/planet-jupiter.png";
+import saturn from "../assets/planet-saturn.png";
+import uranus from "../assets/planet-uranus.png";
+import neptune from "../assets/planet-neptune.png";
 
 function OverviewImage() {
   const location = useLocation()
   
-  if (location.pathname === '/mercury') {
-    return <Mercury />
+   const planetImages: Record<string, string> = {
+     "/mercury": mercury,
+     "/venus": venus,
+     "/earth": earth,
+     "/mars": mars,
+     "/jupiter": jupiter,
+     "/saturn": saturn,
+     "/uranus": uranus,
+     "/neptune": neptune,
+   };
+
+  if (location.pathname in planetImages) {
+    const imageSrc = planetImages[location.pathname];
+    return <img src={imageSrc} alt="Planet Image" />;
   }
-  if (location.pathname === "/venus") {
-    return <Venus />;
-  }
-  if (location.pathname === "/earth") {
-    return <Earth />;
-  }
-  if (location.pathname === "/mars") {
-    return <Mars />;
-  }
-  if (location.pathname === "/jupiter") {
-    return <Jupiter />;
-  }
-  if (location.pathname === "/saturn") {
-    return <Saturn />;
-  }
-  if (location.pathname === "/uranus") {
-    return <Uranus />;
-  }
-  if (location.pathname === "/neptune") {
-    return <Neptune />;
-  }
-  return null;
 }
 export default OverviewImage
