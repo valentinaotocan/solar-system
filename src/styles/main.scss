@@ -1,9 +1,9 @@
 @import "reset";
-@import "colors.scss";
-
-@import "components/Header.scss";
+@import "colors";
 
 @import 'Planets';
+
+@import "components/Header";
 
 body {
   color: $white;
