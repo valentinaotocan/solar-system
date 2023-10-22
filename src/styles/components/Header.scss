@@ -1,10 +1,9 @@
-header {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 5.31rem;
-  padding-left: 2rem;
-  padding-right: 2.56rem;
+  padding: 0 2.56rem 0 2rem;
   position: relative;
   &::after {
     content: "";
@@ -22,6 +21,9 @@ header {
     text-transform: uppercase;
     line-height: 1.29;
   }
+  .menu-toggle {
+    display: none;
+  }
   nav {
     a {
       &.link {
@@ -37,11 +39,9 @@ header {
       }
       &:hover,
       &.active {
-        // Hover and active link styles
         position: relative;
         display: inline-block;
         width: auto;
-
         &::before {
           content: "";
           position: absolute;
@@ -59,6 +59,76 @@ header {
           background-color: $color;
         }
       }
+    }
+  }
+  // max-width: 1000px
+  @media (max-width: 62.5rem) {
+    flex-direction: column;
+    height: 10rem;
+    justify-content: space-around;
+    nav a:hover::before,
+    nav a.active::before {
+      top: -0.95rem;
+    }
+  }
+  @media (max-width: 48rem) {
+    nav a:hover::before,
+    nav a.active::before {
+      display: none;
+    }
+  }
+  @media (max-width: 46.625rem) {
+    flex-direction: row;
+    height: 4.313rem;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    nav {
+      &.closed {
+        display: none;
+      }
+      &.open {
+        display: block;
+        position: fixed;
+        top: 4.375rem;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        background: $navy;
+        padding-top: 1.5rem;
+        a {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          &.link {
+            height: 4.063rem;
+            position: relative;
+            margin: 0 1.5rem;
+            &::before {
+              content: "";
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 1px;
+              background-color: $grey;
+            }
+            &:last-child::before {
+              display: none;
+            }
+          }
+          .planet-circle {
+            display: inline-block;
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 50%;
+            margin-right: 1.56rem;
+          }
+        }
+      }
+    }
+    .menu-toggle {
+      display: block;
     }
   }
 }
