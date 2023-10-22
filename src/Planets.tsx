@@ -101,20 +101,20 @@ function Planets() {
       </div>
       <div className="planet__information">
         <div className="planet__information__div">
-          <p>Rotation time</p>
-          <h2>{planet.rotation}</h2>
+          <h2>Rotation time</h2>
+          <h3>{planet.rotation}</h3>
         </div>
         <div className="planet__information__div">
-          <p>Revolution time</p>
-          <h2>{planet.revolution}</h2>
+          <h2>Revolution time</h2>
+          <h3>{planet.revolution}</h3>
         </div>
         <div className="planet__information__div">
-          <p>Radius time</p>
-          <h2>{planet.radius}</h2>
+          <h2>Radius time</h2>
+          <h3>{planet.radius}</h3>
         </div>
         <div className="planet__information__div">
-          <p>Average temp.</p>
-          <h2>{planet.temperature}</h2>
+          <h2>Average temp.</h2>
+          <h3>{planet.temperature}</h3>
         </div>
       </div>
     </section>

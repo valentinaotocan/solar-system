@@ -1,7 +1,7 @@
 @import "reset";
 @import "colors";
 
-@import 'Planets';
+@import "Planets";
 
 @import "components/Header";
 
@@ -23,7 +23,16 @@ h1 {
   font-family: "Antonio", sans-serif;
 }
 
-h2 {
+h2,
+.header nav a.link {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  line-height: 2.27;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
+}
+
+h3 {
   font-family: "Antonio", sans-serif;
   font-size: 2.5rem;
   line-height: 1.29;
@@ -31,29 +40,22 @@ h2 {
   text-transform: uppercase;
 }
 
-h3, button {
+button {
   font-size: 0.75rem;
   font-weight: 700;
   line-height: 2.08;
-  letter-spacing: 0.16rem;
+  letter-spacing: 0.16069rem;
   text-transform: uppercase;
 }
 
-h4 {
-  font-size: 0.69rem;
-  font-weight: 700;
-  line-height: 2.27;
-  letter-spacing: 0.06rem;
-  text-transform: uppercase;
-}
-
-a, button {
+a,
+button {
   color: inherit;
   display: inline-block;
 }
 
-// responsive - 768px;
-@media(max-width: 48rem) {
+// responsive - 1000px;
+@media (max-width: 62.5rem) {
   body {
     font-size: 0.6875rem;
     line-height: 2;
@@ -61,5 +63,22 @@ a, button {
 
   h1 {
     font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 0.5rem;
+    line-height: 2;
+    letter-spacing: 0.04544rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    letter-spacing: -0.05625rem;
+  }
+
+  button {
+    font-size: 0.5625rem;
+    line-height: 2.78;
+    letter-spacing: 0.12056rem;
   }
 }
