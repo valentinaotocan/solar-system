@@ -11,23 +11,22 @@ function App() {
       <AnimatePresence>
         <motion.div
           key={location.pathname}
-          initial={{ opacity: 0, clipPath: "circle(0%)", }}
+          initial={{ opacity: 0, clipPath: "circle(0%)" }}
           animate={{
             opacity: 1,
             clipPath: ["circle(0%)", "circle(50%)", "circle(100%)"],
             transition: {
-              duration: 1.5, // Animation duration in seconds
-              ease: [0.5, 0.0, 0.2, 1], // Custom easing function
-              times: [0, 1], // Keyframe times
+              duration: 3,
+              ease: "easeInOut",
+              times: [0, 1],
             },
           }}
           exit={{
             opacity: 0,
             clipPath: "circle(0%)",
             transition: {
-              duration: 0.1, // Animation duration in seconds
-              ease: [0.0, 0.0, 0, 0], // Custom easing function
-              times: [0, 1], // Keyframe times
+              duration: 1.3,
+              times: [0, 1],
             },
           }}
         >
