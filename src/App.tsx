@@ -16,7 +16,7 @@ function App() {
             opacity: 1,
             clipPath: ["circle(0%)", "circle(50%)", "circle(100%)"],
             transition: {
-              duration: 3,
+              duration: 2.5,
               ease: "easeInOut",
               times: [0, 1],
             },
@@ -25,7 +25,7 @@ function App() {
             opacity: 0,
             clipPath: "circle(0%)",
             transition: {
-              duration: 1.3,
+              duration: 1,
               times: [0, 1],
             },
           }}
