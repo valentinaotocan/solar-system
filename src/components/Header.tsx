@@ -41,6 +41,7 @@ function Header() {
               to={planet.name}
               className="link"
               data-planet={planet.name}
+              onClick={() => setIsOpen(false)}
             >
               <div>
                 <span

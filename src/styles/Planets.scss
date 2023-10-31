@@ -1,6 +1,6 @@
 .planet {
   margin: 0 auto;
-  max-width: 1109px;
+  max-width: 69.312rem;
   padding-top: 7.88rem;
   padding-bottom: 3.5rem;
   &__main {
@@ -37,7 +37,6 @@
         &__source {
           padding-top: 1.5rem;
           padding-bottom: 2.44rem;
-          opacity: 0.5;
           a {
             font-weight: 700;
             .icon-source {
@@ -64,7 +63,6 @@
             background-color: $grey !important;
           }
           span {
-            opacity: 0.5;
             padding-right: 1.75rem;
             padding-left: 1.75rem;
           }
@@ -87,6 +85,7 @@
   }
   // responsive - 1200px
   @media (max-width: 75rem) {
+    padding-top: 0;
     padding-left: 2.44rem;
     padding-right: 2.5rem;
     &__main {
@@ -94,6 +93,7 @@
       height: unset;
       &__image {
         width: 100%;
+        height: 45rem;
       }
       &__text {
         display: flex;
@@ -104,7 +104,6 @@
         }
         &__buttons {
           width: 40%;
-          display: flex;
           justify-content: center;
           margin-left: 3%;
           button {
@@ -116,8 +115,16 @@
   }
   // 1000px
   @media (max-width: 62.5rem) {
-    .planet__main {
+    padding-bottom: 2.25rem;
+    &__main {
       padding-bottom: 0;
+      &__image {
+        width: 100%;
+        height: 29.563rem;
+        img {
+          max-height: 23.0625rem;
+        }
+      }
       &__text__facts {
         &__heading {
           padding-bottom: 1.5rem;
@@ -126,15 +133,22 @@
           padding: 2rem 0 2.56rem 0;
         }
       }
-      &__text__buttons button {
-        width: 17.5625rem;
-        height: 2.5rem;
+      &__text__buttons {
+        align-content: flex-end;
+        flex-wrap: wrap;
+        button {
+          width: 17.224rem;
+          height: 2.5rem;
+        }
       }
     }
     .planet__information {
       gap: 0.69rem;
+      justify-content: space-between;
       &__div {
         padding-left: 1.44rem;
+        width: 10.25rem;
+        height: 5.5rem;
       }
     }
   }

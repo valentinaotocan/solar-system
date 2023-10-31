@@ -58,7 +58,7 @@ function Planets() {
             {index === 1 && <PlanetText content={planet.overview.content} />}
             {index === 2 && <PlanetText content={planet.structure.content} />}
             {index === 3 && <PlanetText content={planet.geology.content} />}
-            <div className="planet__main__text__facts__source">
+            <div className="planet__main__text__facts__source grey-color">
               <span>Source : </span>
               <a href={sourceUrl} target="_blank" rel="noopener noreferrer">
                 Wikipedia <IconSource className="icon-source" />
@@ -74,7 +74,7 @@ function Planets() {
               }}
               className={index === 1 ? "active" : ""}
             >
-              <span>01</span>Overview
+              <span className="grey-color">01</span>Overview
             </button>
             <button
               onClick={() => setIndex(2)}
@@ -84,7 +84,7 @@ function Planets() {
                   index === 2 ? buttonBackgroundColor : "transparent",
               }}
             >
-              <span>02</span>Internal structure
+              <span className="grey-color">02</span>Internal structure
             </button>
             <button
               onClick={() => setIndex(3)}
@@ -94,26 +94,26 @@ function Planets() {
                   index === 3 ? buttonBackgroundColor : "transparent",
               }}
             >
-              <span>03</span>Surface geology
+              <span className="grey-color">03</span>Surface geology
             </button>
           </div>
         </div>
       </div>
       <div className="planet__information">
         <div className="planet__information__div">
-          <h2>Rotation time</h2>
+          <h2 className="grey-color">Rotation time</h2>
           <h3>{planet.rotation}</h3>
         </div>
         <div className="planet__information__div">
-          <h2>Revolution time</h2>
+          <h2 className="grey-color">Revolution time</h2>
           <h3>{planet.revolution}</h3>
         </div>
         <div className="planet__information__div">
-          <h2>Radius time</h2>
+          <h2 className="grey-color">Radius time</h2>
           <h3>{planet.radius}</h3>
         </div>
         <div className="planet__information__div">
-          <h2>Average temp.</h2>
+          <h2 className="grey-color">Average temp.</h2>
           <h3>{planet.temperature}</h3>
         </div>
       </div>
